@@ -1,7 +1,8 @@
 package br.com.tiagosantos.carstore.services;
 
-import br.com.tiagosantos.carstore.controllers.BadRequestException;
+import br.com.tiagosantos.carstore.exceptions.BadRequestException;
 import br.com.tiagosantos.carstore.converters.VehicleFormToVehicle;
+import br.com.tiagosantos.carstore.exceptions.BrandNotExistsException;
 import br.com.tiagosantos.carstore.forms.VehicleForm;
 import br.com.tiagosantos.carstore.models.Vehicle;
 import br.com.tiagosantos.carstore.repositories.VehicleRepository;
@@ -21,6 +22,9 @@ public class VehicleServiceImpl implements VehicleService {
     @Autowired
     private VehicleFormToVehicle vehicleFormToVehicle;
 
+    @Autowired
+    private BrandsService brandsService;
+
     @Override
     public List<Vehicle> listAll() {
         List<Vehicle> vehicles = (List<Vehicle>) vehicleRepository.findAll();
@@ -35,6 +39,7 @@ public class VehicleServiceImpl implements VehicleService {
 
     @Override
     public Vehicle create(VehicleForm vehicleForm) {
+        if ( !brandsService.validate(vehicleForm.getBrand()) ) throw new BrandNotExistsException();
         Vehicle vehicle = vehicleFormToVehicle.convert(vehicleForm);
         Vehicle savedVehicle = vehicleRepository.save(vehicle);
         return savedVehicle;

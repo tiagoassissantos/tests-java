@@ -1,4 +1,4 @@
-package br.com.tiagosantos.carstore.controllers;
+package br.com.tiagosantos.carstore.exceptions;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ResponseStatus;

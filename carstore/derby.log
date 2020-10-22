@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Oct 22 03:39:10 BRT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-4f08-5dd3-000003a4de50 
+Thu Oct 22 04:13:14 BRT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-4f27-8d58-000007bdfcd8 
 on database directory /home/tiago/Projetos/TINOVA/tests-java/carstore/carstore with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
 Loaded from file:/home/tiago/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
 java.vendor=Private Build
