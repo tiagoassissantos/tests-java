@@ -4,6 +4,8 @@ import br.com.tiagosantos.carstore.forms.VehicleForm;
 import br.com.tiagosantos.carstore.models.Vehicle;
 import br.com.tiagosantos.carstore.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
@@ -30,9 +32,9 @@ public class VehiclesController {
     }
 
     @PostMapping("")
-    public Vehicle create( @RequestBody VehicleForm vehicleForm ) {
+    public ResponseEntity<Vehicle> create(@RequestBody VehicleForm vehicleForm ) {
         Vehicle vehicle = vehicleService.create(vehicleForm);
-        return vehicle;
+        return new ResponseEntity<Vehicle>( vehicle, HttpStatus.CREATED);
     }
 
     @PutMapping("/{id}")

@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Thu Oct 22 11:45:00 BRT 2020:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-50c5-2ae5-000004096410 
+Thu Oct 22 14:21:54 BRT 2020:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.14.2.0 - (1828579): instance a816c00e-0175-5154-ce64-000001a848e8 
 on database directory /home/tiago/Projetos/TINOVA/tests-java/carstore/carstore with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
 Loaded from file:/home/tiago/.gradle/caches/modules-2/files-2.1/org.apache.derby/derby/10.14.2.0/7efad40ef52fbb1f08142f07a83b42d29e47d8ce/derby-10.14.2.0.jar
 java.vendor=Private Build
@@ -11,46 +11,3 @@ os.arch=amd64
 os.version=5.4.0-48-generic
 derby.system.home=null
 Database Class Loader started - derby.database.classpath=''
-----------------------------------------------------------------
-Thu Oct 22 11:57:13 BRT 2020:
-Shutting down instance a816c00e-0175-50c5-2ae5-000004096410 on database directory /home/tiago/Projetos/TINOVA/tests-java/carstore/carstore with class loader jdk.internal.loader.ClassLoaders$AppClassLoader@5bc2b487 
-Thu Oct 22 11:57:14 BRT 2020 Thread[Thread-19,5,main] Cleanup action starting
-ERROR XBM0I: Directory carstore cannot be removed.
-	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
-	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
-	at org.apache.derby.iapi.services.monitor.Monitor.removePersistentService(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection$6.run(Unknown Source)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
-	at org.apache.derby.impl.jdbc.EmbedConnection.removePersistentService(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
-	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Cleanup action completed
-Thu Oct 22 11:57:14 BRT 2020 Thread[Thread-19,5,main] Cleanup action starting
-ERROR XBM0I: Directory carstore cannot be removed.
-	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
-	at org.apache.derby.iapi.error.StandardException.newException(Unknown Source)
-	at org.apache.derby.iapi.services.monitor.Monitor.removePersistentService(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection$6.run(Unknown Source)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
-	at org.apache.derby.impl.jdbc.EmbedConnection.removePersistentService(Unknown Source)
-	at org.apache.derby.impl.jdbc.EmbedConnection.<init>(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$1.run(Unknown Source)
-	at java.base/java.security.AccessController.doPrivileged(AccessController.java:554)
-	at org.apache.derby.jdbc.InternalDriver.getNewEmbedConnection(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
-	at org.apache.derby.jdbc.InternalDriver$LoginCallable.call(Unknown Source)
-	at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:264)
-	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
-	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
-	at java.base/java.lang.Thread.run(Thread.java:832)
-Cleanup action completed

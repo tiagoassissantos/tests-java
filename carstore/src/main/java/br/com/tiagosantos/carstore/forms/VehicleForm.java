@@ -11,6 +11,18 @@ public class VehicleForm {
     public String description;
     public Boolean sold;
 
+    public VehicleForm(String vehicle, String brand, Integer manufactureYear, String description, Boolean sold) {
+        this.vehicle = vehicle;
+        this.brand = brand;
+        this.manufactureYear = manufactureYear;
+        this.description = description;
+        this.sold = sold;
+    }
+
+    public VehicleForm() {
+
+    }
+
     public String getVehicle() {
         return vehicle;
     }
