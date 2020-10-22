@@ -68,11 +68,12 @@ public class VehicleServiceImpl implements VehicleService {
 
             case "byDecade":
                  List<Object[]> decades = vehicleRepository.countByDecade();
-                 List<Map<Integer, Integer>> result = new ArrayList<Map<Integer, Integer>>();
+                 List<Map<String, Integer>> result = new ArrayList<Map<String, Integer>>();
 
                  for (Object[] decade : decades) {
-                     Map<Integer, Integer> item = new HashMap<Integer, Integer>();
-                     item.put( Double.valueOf((Double) decade[0]).intValue() , (Integer) decade[1] );
+                     Map<String, Integer> item = new HashMap<String, Integer>();
+                     item.put( "decade", Double.valueOf((Double) decade[0]).intValue() );
+                     item.put("quantity", (Integer) decade[1] );
                      result.add(item);
                  }
 

@@ -7,7 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/veiculos")
@@ -46,9 +48,11 @@ public class VehiclesController {
     }
 
     @DeleteMapping("")
-    public String delete( @PathVariable Long id  ) {
+    public Map<String, Boolean> delete(@PathVariable Long id  ) {
         vehicleService.delete(id);
-        return "ok";
+        Map<String, Boolean> result = new HashMap<String, Boolean>();
+        result.put("deleted", true);
+        return result;
     }
 
     @GetMapping("/find")
