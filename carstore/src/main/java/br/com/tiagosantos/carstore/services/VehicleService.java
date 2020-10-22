@@ -11,4 +11,5 @@ public interface VehicleService {
     Vehicle create(VehicleForm vehicleForm);
     Vehicle update(long id, VehicleForm vehicleForm);
     boolean delete(long id);
+    <T> List<T> find(String param) throws Exception;
 }

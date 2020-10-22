@@ -6,12 +6,14 @@ import br.com.tiagosantos.carstore.repositories.VehicleRepository;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.annotation.DirtiesContext;
 
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 @SpringBootTest
+@AutoConfigureTestDatabase(replace = AutoConfigureTestDatabase.Replace.ANY)
 public class VehicleServiceTests {
     @Autowired
     private VehicleService vehicleService;
@@ -33,7 +35,7 @@ public class VehicleServiceTests {
 
     @Test
     public void shouldUpdateAllFields() throws Exception {
-        long vehicleId = createVehicle().getId();
+        long vehicleId = createVehicle(null).getId();
 
         VehicleForm vehicleForm = new VehicleForm();
         vehicleForm.setBrand("Honda");
@@ -52,7 +54,7 @@ public class VehicleServiceTests {
 
     @Test
     public void shouldUpdateSomeFields() throws Exception {
-        long vehicleId = createVehicle().getId();
+        long vehicleId = createVehicle(null).getId();
 
         VehicleForm vehicleForm = new VehicleForm();
         vehicleForm.setVehicle("Civic");
@@ -68,20 +70,34 @@ public class VehicleServiceTests {
 
     @Test
     public void shouldDelete() throws Exception {
-        long vehicleId = createVehicle().getId();
+        long vehicleId = createVehicle(null).getId();
         vehicleService.delete(vehicleId);
         Optional<Vehicle> vehicle = vehicleRepository.findById(vehicleId);
         assertTrue( vehicle.isEmpty() );
     }
 
+    @Test
+    public void shouldGetVehiclesCreatedLastWeek() throws Exception {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(new Date());
+        cal.add(Calendar.DATE, -7);
+        Vehicle vehicle = createVehicle(cal.getTime());
 
-    protected Vehicle createVehicle() {
+        List<Vehicle> vehicles = vehicleService.find("lastWeek");
+
+        assertEquals(1, vehicles.size());
+        assertEquals("Fit", vehicles.get(0).getVehicle());
+    }
+
+
+    protected Vehicle createVehicle(Date created) {
         Vehicle vehicle = new Vehicle();
         vehicle.setBrand("Honda");
         vehicle.setVehicle("Fit");
         vehicle.setManufactureYear(2007);
         vehicle.setDescription("Test create vehicle");
         vehicle.setSold(false);
+        if (created != null) vehicle.setCreated(created);
         vehicleRepository.save(vehicle);
         return vehicle;
     }

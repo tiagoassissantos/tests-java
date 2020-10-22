@@ -6,6 +6,7 @@ import br.com.tiagosantos.carstore.services.VehicleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -51,7 +52,8 @@ public class VehiclesController {
     }
 
     @GetMapping("/find")
-    public String find() {
-        return "teste";
+    public <T> List<T> find(@RequestParam String q) throws Exception {
+        List<T> result = vehicleService.find(q);
+        return result;
     }
 }

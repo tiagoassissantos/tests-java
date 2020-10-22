@@ -8,11 +8,8 @@ import java.util.List;
 
 @Controller
 public class HomeController {
-    @GetMapping("/home")
-    @ResponseBody
-    public ModelAndView index() {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setViewName("index.html");
-        return modelAndView;
+    @RequestMapping("/home")
+    public String index() {
+        return "index.html";
     }
 }

@@ -9,13 +9,13 @@ public class Vehicle {
     @javax.persistence.Id
     @GeneratedValue
     private Long id;
-    public String vehicle;
-    public String brand;
-    public Integer manufactureYear;
-    public String description;
-    public Boolean sold;
-    public Date created;
-    public Date updated;
+    private String vehicle;
+    private String brand;
+    private Integer manufactureYear;
+    private String description;
+    private Boolean sold;
+    private Date created;
+    private Date updated;
 
     public Vehicle() {
         created = new Date();
